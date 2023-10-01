@@ -37,8 +37,9 @@ echo "MOZ_ENABLE_WAYLAND=1" > ~/.config/environment.d/envvars.conf
 ```
 
 ### Enable Wayland in VSCode
+
 ```bash
-# TODO
+sed 's/^\(Exec=.*\)$/\1 --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland/g' /usr/share/applications/code.desktop
 ```
 
 ## Shared profile between *bash* and *zsh*
@@ -119,3 +120,5 @@ echo "PATH=$PATH:/usr/lib/jvm/jdk-20/bin" >> ~/.profile
 ```
 
 ## Getting proper sound drivers
+
+Refer to [this](https://github.com/farfaaa/asus_zenbook_UM3402YA) guide to resolve any sound related problems.
